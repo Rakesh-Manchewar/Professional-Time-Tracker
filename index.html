@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker - Make Every Moment Count</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpeg" href="RightTimeIcon.jpg">
+</head>
+
+<body>
+    <!-- Control Panel -->
+    <div class="control-panel">
+        <!-- Theme Selector -->
+        <div class="control-item theme-selector">
+            <button class="control-btn theme-btn" aria-label="Change color theme" title="Change Theme">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 2a7 7 0 0 0 0 14" />
+                </svg>
+            </button>
+            <div class="control-dropdown theme-dropdown">
+                <div class="dropdown-header">Color Theme</div>
+                <div class="theme-grid">
+                    <button data-theme="midnight" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #6366f1, #8b5cf6)"></span>
+                        <span class="theme-name">Midnight</span>
+                    </button>
+                    <button data-theme="ocean" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4)"></span>
+                        <span class="theme-name">Ocean</span>
+                    </button>
+                    <button data-theme="sunset" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #f97316, #f59e0b)"></span>
+                        <span class="theme-name">Sunset</span>
+                    </button>
+                    <button data-theme="forest" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #10b981, #14b8a6)"></span>
+                        <span class="theme-name">Forest</span>
+                    </button>
+                    <button data-theme="rose" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #ec4899, #f43f5e)"></span>
+                        <span class="theme-name">Rose</span>
+                    </button>
+                    <button data-theme="slate" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #64748b, #71717a)"></span>
+                        <span class="theme-name">Slate</span>
+                    </button>
+                    <button data-theme="crimson" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #dc2626, #e11d48)"></span>
+                        <span class="theme-name">Crimson</span>
+                    </button>
+                    <button data-theme="golden" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #eab308, #f59e0b)"></span>
+                        <span class="theme-name">Golden</span>
+                    </button>
+                    <button data-theme="mint" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #06b6d4, #14b8a6)"></span>
+                        <span class="theme-name">Mint</span>
+                    </button>
+                    <button data-theme="lavender" class="theme-option">
+                        <span class="theme-color" style="background: linear-gradient(135deg, #a855f7, #d946ef)"></span>
+                        <span class="theme-name">Lavender</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Font Selector -->
+        <div class="control-item font-selector">
+            <button class="control-btn font-btn" aria-label="Change font" title="Change Font">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 7V4h16v3M9 20h6M12 4v16" />
+                </svg>
+            </button>
+            <div class="control-dropdown font-dropdown">
+                <div class="dropdown-header">Font Style</div>
+                <button data-font="inter" class="font-option">Inter</button>
+                <button data-font="poppins" class="font-option">Poppins</button>
+                <button data-font="space" class="font-option">Space Grotesk</button>
+                <button data-font="outfit" class="font-option">Outfit</button>
+                <button data-font="roboto" class="font-option">Roboto</button>
+            </div>
+        </div>
+
+        <!-- Timezone Selector -->
+        <div class="control-item timezone-selector">
+            <button class="control-btn timezone-btn" aria-label="Change timezone" title="Change Timezone">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                </svg>
+            </button>
+            <div class="control-dropdown timezone-dropdown">
+                <div class="dropdown-header">Timezone</div>
+                <button data-timezone="Asia/Kolkata" data-abbr="IST" class="timezone-option active">
+                    <span class="tz-name">India (IST)</span>
+                    <span class="tz-offset">+5:30</span>
+                </button>
+                <button data-timezone="America/New_York" data-abbr="EST" class="timezone-option">
+                    <span class="tz-name">New York (EST)</span>
+                    <span class="tz-offset">-5:00</span>
+                </button>
+                <button data-timezone="America/Los_Angeles" data-abbr="PST" class="timezone-option">
+                    <span class="tz-name">Los Angeles (PST)</span>
+                    <span class="tz-offset">-8:00</span>
+                </button>
+                <button data-timezone="America/Chicago" data-abbr="CST" class="timezone-option">
+                    <span class="tz-name">Chicago (CST)</span>
+                    <span class="tz-offset">-6:00</span>
+                </button>
+                <button data-timezone="Europe/London" data-abbr="GMT" class="timezone-option">
+                    <span class="tz-name">London (GMT)</span>
+                    <span class="tz-offset">+0:00</span>
+                </button>
+                <button data-timezone="Europe/Paris" data-abbr="CET" class="timezone-option">
+                    <span class="tz-name">Paris (CET)</span>
+                    <span class="tz-offset">+1:00</span>
+                </button>
+                <button data-timezone="Asia/Tokyo" data-abbr="JST" class="timezone-option">
+                    <span class="tz-name">Tokyo (JST)</span>
+                    <span class="tz-offset">+9:00</span>
+                </button>
+                <button data-timezone="Asia/Shanghai" data-abbr="CST" class="timezone-option">
+                    <span class="tz-name">Shanghai (CST)</span>
+                    <span class="tz-offset">+8:00</span>
+                </button>
+                <button data-timezone="Asia/Dubai" data-abbr="GST" class="timezone-option">
+                    <span class="tz-name">Dubai (GST)</span>
+                    <span class="tz-offset">+4:00</span>
+                </button>
+                <button data-timezone="Australia/Sydney" data-abbr="AEDT" class="timezone-option">
+                    <span class="tz-name">Sydney (AEDT)</span>
+                    <span class="tz-offset">+11:00</span>
+                </button>
+                <button data-timezone="Pacific/Auckland" data-abbr="NZDT" class="timezone-option">
+                    <span class="tz-name">Auckland (NZDT)</span>
+                    <span class="tz-offset">+13:00</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">Make Every Moment Count</h1>
+            <p class="subtitle">Time is the most valuable resource you have</p>
+        </header>
+
+        <!-- Main Grid -->
+        <div class="grid">
+            <!-- Current Date Card -->
+            <div class="card date-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                </div>
+                <div class="card-label">Today's Date</div>
+                <div class="card-value" id="currentDate">Loading...</div>
+                <div class="card-subtext" id="weekday">Loading...</div>
+            </div>
+
+            <!-- Current Time Card -->
+            <div class="card time-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                </div>
+                <div class="card-label">Current Time</div>
+                <div class="card-value" id="currentTime">00:00:00</div>
+                <div class="card-subtext" id="timezone-display">IST</div>
+            </div>
+
+            <!-- Day of Year Card -->
+            <div class="card day-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 6v6l4 2" />
+                    </svg>
+                </div>
+                <div class="card-label">Day of Year</div>
+                <div class="card-value" id="dayOfYear">1</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="yearProgress"></div>
+                </div>
+                <div class="card-subtext" id="yearProgress-text">0% of year completed</div>
+            </div>
+
+            <!-- Time Remaining Card -->
+            <div class="card remaining-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 6v6l4 2" />
+                        <path d="M12 12L8 10" />
+                    </svg>
+                </div>
+                <div class="card-label">Time Remaining Today</div>
+                <div class="card-value" id="timeRemaining">23:59:59</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="dayProgress"></div>
+                </div>
+                <div class="card-subtext" id="dayProgress-text">0% of day completed</div>
+            </div>
+
+            <!-- Year Progress Card -->
+            <div class="card year-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M3 9h18" />
+                        <path d="M9 21V9" />
+                    </svg>
+                </div>
+                <div class="card-label">Days Remaining in Year</div>
+                <div class="card-value" id="daysRemaining">365</div>
+                <div class="card-subtext" id="daysTotal">out of 365 days</div>
+            </div>
+
+            <!-- Motivational Quote Card -->
+            <div class="card quote-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z" />
+                        <path
+                            d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z" />
+                    </svg>
+                </div>
+                <div class="card-label">Remember</div>
+                <p class="quote-text">"Time is what we want most, but what we use worst."</p>
+                <p class="quote-author">— William Penn</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Every second counts. Make them meaningful.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
